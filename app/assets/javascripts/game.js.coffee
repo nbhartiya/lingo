@@ -27,7 +27,9 @@ $ ->
           $(cell).addClass "blue"
       $("ol").append("<li>#{guess}</li>")
       guess_number++
-      if guess_number == 5
+      if guess_number == 5 and guess != word
         alert "You lost! The word was #{word.toUpperCase()}. Hit refresh and play again..."
+      else if guess == word
+        alert "Good job. You got the word! Hit refresh to play again."
     else
       alert "#{guess} is not a word in our dictionary. Try an existing five letter word!"
