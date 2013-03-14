@@ -1,12 +1,32 @@
-%p Welcome to lingo
-
-%table
-  - 5.times do |i|
-    %tr
-      - 5.times do |j|
-        %td
-        
-%input{:type => :text, :placeholder => "Guess a word"}
-%button GUESS
-
-%ol
+.hero-unit
+  %h1 Welcome to LINGO!
+  %p The goal of the game is to guess a five-letter word that starts with the red capital letter you see below. You have five guesses to get the word by guessing REAL (non-plural) five-letter words that start with that letter. Good luck!
+  
+.container
+  .span4.offset1
+    %p 
+      %table
+        - 5.times do |i|
+          %tr
+            - 5.times do |j|
+              %td
+      %p
+      %input{:type => :text, :placeholder => "Guess a word"}
+      %button.btn.btn-primary{:type => "button"} GUESS
+      
+      %ol
+  .span4
+    %h1
+      %u
+        Key
+    %p
+      %b
+        %font{:color => "red",} Red
+      %font letters are in the right spot.
+    %p
+      %b
+        %font{:color => "blue",} Blue
+      %font letters are in the correct word, but you have them in the wrong spot.
+    %p
+      %b Black
+      letters are not in the word at all.
